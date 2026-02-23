@@ -10,7 +10,7 @@
 <div class="container py-3">
 <h1>TESTE PHP</h1>
 <h3>Data de hoje: <?php echo date("d/m/Y"); ?> </h3>
-<form method="post" action="resposta.php">
+<form method="post">
 <div class="mb-3">
               <label for="user-name" class="form-label">Username:</label>
               <input type="text" id="user-name" name="user-name" class="form-control">
@@ -23,6 +23,12 @@
             </div>
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $nome = $_POST['user-name'];
+            echo "<p> Bem vindo (a) $nome </p>";
+        }
+    ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </div>
 </body>
