@@ -24,8 +24,8 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="tempF">Temperatura em Fahrenheit:</label>
-                                <input type="number" id="tempF" name="tempF" class="form-control">
+                                <label class="form-label" for="tempF" step="any">Temperatura em Fahrenheit:</label>
+                                <input type="number" id="tempF" name="tempF" class="form-control" step="0.01">
                             </div>
 
                             <div class="mt-5">

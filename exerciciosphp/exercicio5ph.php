@@ -24,16 +24,16 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="nota1">Nota 1:</label>
-                                <input type="number" id="nota" name="nota1" class="form-control">
+                                <label class="form-label" for="nota1" step="any">Nota 1:</label>
+                                <input type="number" id="nota" name="nota1" class="form-control" step="0.01">
                             </div>
                             <div class="col-md-6 pt-3">
-                                <label for="nota2" class="form-label fw-b">Nota 2:</label>
-                                <input type="number" class="form-control" id="nota2" name="nota2">
+                                <label for="nota2" class="form-label fw-b" step="any">Nota 2:</label>
+                                <input type="number" class="form-control" id="nota2" name="nota2" step="0.01">
                             </div>
                             <div class="col-md-12 pt-3">
-                                <label for="nota3" class="form-label">Nota 3:</label>
-                                <input type="number" class="form-control" id="nota3" name="nota3">
+                                <label for="nota3" class="form-label" step="any">Nota 3:</label>
+                                <input type="number" class="form-control" id="nota3" name="nota3" step="0.01">
                             </div>
 
                             <div class="mt-5">

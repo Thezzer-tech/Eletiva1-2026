@@ -24,8 +24,8 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="raio">Raio do círculo:</label>
-                                <input type="number" id="raio" name="raio" class="form-control">
+                                <label class="form-label" for="raio" step="any">Raio do círculo:</label>
+                                <input type="number" id="raio" name="raio" step="0.01" class="form-control">
                             </div>
 
 

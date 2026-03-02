@@ -24,9 +24,10 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="tempC" step="any">Temperatura em celsius:</label>
-                                <input type="number" id="tempC" name="tempC" class="form-control" step="0.01">
+                                <label class="form-label" for="metro" step="any">Metros:</label>
+                                <input type="number" id="metro" name="metro" step="0.01" class="form-control">
                             </div>
+
 
                             <div class="mt-5">
                                     <div class="text-end">
@@ -36,16 +37,16 @@
                                 </div>
 
                         </form>
-
-                        <div class="text-center">
-                            <?php
-
-                                if($_SERVER["REQUEST_METHOD"] == "POST"){
-                                    $tempC = $_POST["tempC"];
-                                    $convert = ($tempC*1.8)+32;
-                                    echo "<p>Temperatura em Fahrenheit: $convert °<p>";
-                                }
-                            ?>
+                        <div class="mt-5">
+                            <div class="text-center">
+                                <?php
+                                    if($_SERVER["REQUEST_METHOD"] == "POST"){
+                                        $metro = $_POST["metro"];
+                                        $cent = $metro*100;
+                                        echo "<p>Centímetros: $cent °<p>";
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

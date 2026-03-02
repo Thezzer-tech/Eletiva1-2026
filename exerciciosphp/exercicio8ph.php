@@ -24,12 +24,12 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="altura">Altura do Retângulo:</label>
-                                <input type="number" id="altura" name="altura" class="form-control">
+                                <label class="form-label" for="altura" step="any">Altura do Retângulo:</label>
+                                <input type="number" id="altura" name="altura" class="form-control" step="0.01">
                             </div>
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="largura">Largura do Retângulo:</label>
-                                <input type="number" id="largura" name="largura" class="form-control">
+                                <label class="form-label" for="largura" step="any">Largura do Retângulo:</label>
+                                <input type="number" id="largura" name="largura" class="form-control" step="0.01">
 
                             </div>
 
