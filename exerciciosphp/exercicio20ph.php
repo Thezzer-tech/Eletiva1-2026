@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
-    <title>Exercicio 9 PHP</title>
+    <title>Exercicio 20 PHP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 
     <style>
@@ -24,10 +21,14 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="raio" step="any">Raio do círculo:</label>
-                                <input type="number" id="raio" name="raio" class="form-control" step="0.01">
+                                <label class="form-label" for="dist" step="any">Distância:</label>
+                                <input type="number" id="dist" name="dist" class="form-control" step="0.01">
                             </div>
+                            <div class="col-md-6 pt-3">
+                                <label class="form-label" for="temp" step="any">Tempo:</label>
+                                <input type="number" id="temp" name="temp" class="form-control" step="0.01"> 
 
+                            </div>
 
                             <div class="mt-5">
                                     <div class="text-end">
@@ -41,9 +42,18 @@
                             <div class="text-center">
                                 <?php
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
-                                        $raio = $_POST["raio"];
-                                        $area = round(pi()*($raio**2), 2);
-                                        echo "<p>Área do Círculo: $area °<p>";
+                                        $dist = $_POST["dist"];
+                                        $temp = $_POST["temp"];
+
+                                        if($temp > 0){
+                                            $media = $dist/$temp;
+
+                                            echo "<p>Velocidade média: $media km/h";
+                                        }else{
+                                            echo "<p>O tempo deve ser maior que 0!<p>";
+                                        }
+
+                                        
                                     }
                                 ?>
                             </div>
