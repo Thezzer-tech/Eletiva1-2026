@@ -21,63 +21,8 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Janeiro:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Fevereiro:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Março:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Abril:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Maio:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Junho:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Julho:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Agosto:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Setembro:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Outubro:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Novembro:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="col-md-6 pt-3">
-                                <label class="form-label" for="meses[]" step="any">Valor Dezembro:</label>
-                                <input type="number" id="meses[]" name="meses[]" class="form-control" step="0.01">
+                                <label class="form-label" for="mes" step="any">Valor do mês:</label>
+                                <input type="number" id="mes" name="mes" class="form-control" step="0.01">
                             </div>
 
                             <div class="mt-5">
@@ -91,29 +36,47 @@
                         <div class="mt-5">
                             <div class="text-center">
                                 <?php
-                                    if($_SERVER["REQUEST_METHOD"] == "POST"){
-                                        $mesesN = $_POST["meses"];
-                                        $meses = ["Janeiro",
-                                                "Feveiro",
-                                                "Março",
-                                                "Abril",
-                                                "Maio",
-                                                "Junho",
-                                                "Julho",
-                                                "Agosto",
-                                                "Setembro",
-                                                "Outubro",
-                                                "Novembro",
-                                                "Dezembro"];
+                                    $mes = $_POST["mes"];
 
-                                        
-                                        
-
-                                        for($i = 0; $i < count($mesesN); $i++){   
-                                            echo"<p>".$mesesN[$i]." - " . $meses[$i] . "</p>";
-                                            
-                                        }
+                                    switch ($mes) {
+                                        case "1":
+                                            echo"1 - Janeiro";
+                                            break;
+                                        case "2":
+                                            echo "2 - Feveiro";
+                                            break;
+                                        case "3":
+                                            echo "3 - Março";
+                                            break;
+                                        case "4":
+                                            echo "4 - Abril";
+                                            break;
+                                        case "5":
+                                            echo "5 - Maio";
+                                            break;
+                                        case "6":
+                                            echo "6 - Junho";
+                                            break;
+                                        case "7":
+                                            echo "7 - Julho";
+                                            break;
+                                        case "8":
+                                            echo "8 - Agosto";
+                                            break;
+                                        case "9":
+                                            echo "9 - Setembro";
+                                            break;
+                                        case "10":
+                                            echo "10 - Outubro";
+                                            break;
+                                        case "11":
+                                            echo "11 - Novembro";
+                                            break;
+                                        case "12":
+                                            echo "12 - Dezembro";
+                                            break;
                                     }
+                                    
                                 ?>
                             </div>
                         </div>

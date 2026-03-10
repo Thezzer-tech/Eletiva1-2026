@@ -62,34 +62,49 @@
                             <div class="text-center">
                                 <?php
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
-                                        $numeros = [
-                                            $_POST["n1"],
-                                            $_POST["n2"],
-                                            $_POST["n3"],
-                                            $_POST["n4"],
-                                            $_POST["n5"],
-                                            $_POST["n6"],
-                                            $_POST["n7"]
-                                        ];
+                                        $numeros1 = $_POST["n1"];
+                                        $numeros2 = $_POST["n2"];
+                                        $numeros3 = $_POST["n3"];
+                                        $numeros4 = $_POST["n4"];
+                                        $numeros5 = $_POST["n5"];
+                                        $numeros6 = $_POST["n6"];
+                                        $numeros7 = $_POST["n7"];
 
-                                        $menor = 0;
-                                        $indice = 0;
-                
-                                        for($i = 0; $i < 7; $i++){
+                                        $menor = $numeros1;
+                                        $ind = 1;
 
-                                            if($i == 0){
-                                                $menor = $numeros[$i];
-                                            }
-                                            elseif($numeros[$i] < $menor){
-                                                
-                                                $menor = $numeros[$i];
-                                                $indice = $i;
-                                            }
-
+                                        if($numeros2 < $menor ){
+                                            $menor = $numeros2;
+                                            $ind = 2;
+                                        }
+                                        
+                                        if($numeros3 < $menor){
+                                            $menor = $numeros3;
+                                            $ind = 3;
                                         }
 
-                                        echo "<p>O menor valor é: " . $menor . "</p><br>";
-                                        echo "<p>A posição na sequência é a de número: " . ($indice + 1) . "</p>";
+                                        if($numeros4 < $menor ){
+                                            $menor = $numeros4;
+                                            $ind = 4;
+                                        }
+
+                                        if($numeros5 < $menor){
+                                            $menor = $numeros5;
+                                            $ind = 5;
+                                        }
+
+                                        if($numeros6 < $menor ){
+                                            $menor = $numeros6;
+                                            $ind = 6;
+                                        }
+
+                                        if($numeros7 < $menor ){
+                                            $menor = $numeros7;
+                                            $ind = 7;
+                                        }
+
+                                        echo"<p>Menor número: $menor indíce: $ind</p>";
+
                                     }
                                 ?>
                             </div>
