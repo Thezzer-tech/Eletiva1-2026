@@ -39,19 +39,12 @@
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){  
                                         
                                         $valor = $_POST["valor"];
-                                        $fatorial = 0;
-                                        for($i = 1; $i <= $valor; $i++){
-                                            
-                                            if($fatorial == 0){
-                                                $fatorial =  ($i - 1) * $i;
-                                            }
-                                            else{
-                                                $fatorial = $i * $fatorial;
-                                            }
-
+                                        
+                                        for($i = 1; $i <= 10; $i++){
+                                            echo"<p>".$i."*".$valor." = " . $i*$valor ."</p>";
                                         }
 
-                                        echo"<p> $fatorial </p>";
+                                        
 
                                     }
                                     
