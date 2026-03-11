@@ -39,19 +39,17 @@
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){  
                                         
                                         $valor = $_POST["valor"];
-                                        $soma = 0;
                                     
-                                        $i = 1;
+                                        $i = $valor+1;
                                         
-                                        while ($i <= $valor){
-                                           
+                                        do{
+                                            $i--;
+                                            echo"<p>$i</p>";
 
-                                            $soma = $soma + $i;
+                                            
+                                    
+                                        }while($i > 1);
 
-                                            $i++;
-                                        }
-
-                                        echo "<p>$soma</p>";
                                     }
                                     
                                 ?>
