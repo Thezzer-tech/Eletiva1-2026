@@ -39,7 +39,7 @@
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         $word = $_POST["word"];
 
-                                        echo "Minúscula: " . strtolower($word) . "Maiúscula: " . strtoupper($word);
+                                        echo "Minúscula: " . strtolower($word) . " | Maiúscula: " . strtoupper($word);
                                     }
                                 ?>
                             </div>
