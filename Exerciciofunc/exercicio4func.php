@@ -22,15 +22,15 @@
 
                             <div class="col-md-6 pt-3">
                                 <label class="form-label" for="dia" step="any">Dia:</label>
-                                <input type="text" id="dia" name="dia" class="form-control" step="0.01">
+                                <input type="num" id="dia" name="dia" class="form-control" step="0.01">
                             </div>
                             <div class="col-md-6 pt-3">
                                 <label class="form-label" for="mes" step="any">Mês:</label>
-                                <input type="text" id="mes" name="mes" class="form-control" step="0.01">
+                                <input type="num" id="mes" name="mes" class="form-control" step="0.01">
                             </div>
                             <div class="col-md-6 pt-3">
                                 <label class="form-label" for="ano" step="any">Ano:</label>
-                                <input type="text" id="ano" name="ano" class="form-control" step="0.01">
+                                <input type="num" id="ano" name="ano" class="form-control" step="0.01">
                             </div>
 
                             <div class="mt-5">
