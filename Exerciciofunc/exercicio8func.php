@@ -39,7 +39,8 @@
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         $word = $_POST["word"];
 
-                                        echo str_replace(' ', '',$word);
+                                        echo preg_match_all("/[aeiou]/i", $word);
+                                        
                                     }
                                 ?>
                             </div>
