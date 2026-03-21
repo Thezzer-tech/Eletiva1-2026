@@ -21,15 +21,8 @@
                         <form class="row" method="post">
 
                             <div class="col-md-6 pt-3">
-                                <label class="form-label" for="num" step="any">Número:</label>
-                                <input type="number" id="num" name="num" class="form-control" step="0.01">
-                            </div>
-
-                            <div class="mt-5">
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="reset" class="btn btn-light">Cancel</button>
-                                    </div>
+                                <label class="form-label" for="word" step="any">Frase:</label>
+                                <input type="text" id="word" name="word" class="form-control" step="0.01">
                             </div>
 
                         </form>
@@ -37,9 +30,16 @@
                             <div class="text-center">
                                 <?php
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
-                                        $num = $_POST["num"];
+                                        $word = $_POST["word"];
 
-                                        $num_format = 'R$ ' . number_format($num, 2, ',','.');
+                                        $invertido = strrev($word);
+
+                                        if($word == $invertido){
+                                            echo"$word é uma palavra palíndromo";
+                                        }
+                                        else{
+                                            echo"$word não é uma palavra palíndromo";
+                                        }
                                     }
                                 ?>
                             </div>
