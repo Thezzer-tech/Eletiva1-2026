@@ -46,8 +46,28 @@
                                         $lista_nome = $_POST["nomes"];
                                         $lista_num = $_POST["numero"];
                                         
-                                        //primeira vira chave, segunda o valor
-                                        $contatos = array_combine($lista_nome, $lista_num);
+                                        
+                                        $contatos = array();
+
+                                        for($i = 0; $i < 5; $i++){
+                                            $nome_atual = $lista_nome[$i];
+                                            $numero_atual = $lista_numero[$i];
+                                            // array_key_exists checa se o nome já virou uma chave
+                                            // in_array checa se o numero já é um valor dentro da array
+                                            if(array_key_exists($nome_atual, $contatos) || in_array($numero_atual, $contatos)){
+
+                                                
+                                                continue;//pula para o proximo
+                                        
+                                            }
+
+                                            $contatos[$nome_atual] = $numero_atual;
+
+                                        }
+                                        
+                                        //ordena a lista em ordém alfabética
+                                        ksort($contatos);
+
 
                                         foreach($contatos as $chave => $valor){
                                             echo "<p>Teleforne de $chave: $valor</p>";
