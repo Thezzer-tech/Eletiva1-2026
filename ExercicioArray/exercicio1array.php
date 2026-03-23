@@ -51,7 +51,7 @@
 
                                         for($i = 0; $i < 5; $i++){
                                             $nome_atual = $lista_nome[$i];
-                                            $numero_atual = $lista_numero[$i];
+                                            $numero_atual = $lista_num[$i];
                                             // array_key_exists checa se o nome já virou uma chave
                                             // in_array checa se o numero já é um valor dentro da array
                                             if(array_key_exists($nome_atual, $contatos) || in_array($numero_atual, $contatos)){
