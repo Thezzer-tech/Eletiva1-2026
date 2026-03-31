@@ -26,8 +26,6 @@
                                     <input type="text" id="nomes[]" name="nomes[]" class="form-control">
                                 </div>
                                 <div class="col-md-3 pt-3">
-                                    <label class="form-label" for="cod[]" >Informe Código: </label>
-                                    <input type="number" id="cod[]" name="cod[]" class="form-control">
                                     <label class="form-label" for="price[]" step="any">Informe Preço: </label>
                                     <input type="number" id="price[]" name="price[]" class="form-control" step="0.01">
                                     </div>';
@@ -46,41 +44,24 @@
                                 <?php
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         $nomes = $_POST["nomes"];
-                                        $cods = $_POST["cod"];
-                                        $prices = $_POST["price"];
-                                        
-                                        
-                                        $produtos = array();
-                                        
+                                        $preco = $_POST["price"];
+
+                                        $mapa_valores = array();
+
                                         for($i = 0; $i < 5; $i++){
+                                            $nome_atual = $nomes[$i];
+                                            $valores = $preco[$i]*1.15;
 
-                                            $produtos[$cods[$i]] = array(
-                                                "nome" => $nomes[$i],
-                                                "preco" => (float)$prices[$i]
-                                            );
-                                            
-
+                                            $mapa_valores[$nome_atual] = round($valores, 2);
                                         }
 
-                                        foreach($produtos as $cods => $valor){
-                                            if($valor["preco"] > 100){
-                                                $produtos[$cods]["preco"] = $valor["preco"] - (($valor["preco"] * 10)/100);
-                                            }
+                                        arsort($mapa_valores);
+
+                                        foreach($mapa_valores as $nome => $valor){
+                                            echo "<p>Item : ". $nome . " Valor após imposto: " . $valor . "</p>";
                                         }
 
-
-                                        //permite  criar nova regra de ordenação
-                                        uasort($produtos, function ($a, $b) {
-                                            return strcmp($a["nome"], $b["nome"]); //strcmp ordena em ordem alfabética comparando strings
-                                        });
-
-                                        foreach($produtos as $cod => $valor){
-                                            $nome_produto = $valor["nome"];
-                                            $preco_formatado = number_format($valor["preco"],2,",",".");
-
-                                            echo"<p>Nome do produto: $nome_produto / Cód: $cod / Preço: R$$preco_formatado</p>";
-                                        }
-
+                                        
                                     }
                                 ?>
                             </div>
