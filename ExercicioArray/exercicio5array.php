@@ -44,17 +44,18 @@
                                 <?php
                                     if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         $nome = $_POST["nomes"];
-                                        $qntd = $_POST["qtnd"];
+                                        $qntd = $_POST["qntd"];
 
                                         $mapa_livros = array();
 
                                         for($i = 0; $i < 5; $i++){
-                                            $nome_atual = $nomes[$i];
+                                            $nome_atual = $nome[$i];
                                             $qntd_atual = $qntd[$i];
 
                                             $mapa_livros[$nome_atual] = $qntd_atual;
                                         }
 
+                                        $primeiro = true;
 
                                         foreach($mapa_livros as $nome => $quantia){
 
@@ -64,7 +65,7 @@
                                                 $primeiro = false;
                                             }
                                             elseif($quantia < 5){
-                                                echo "<p>Livro: ". $nome . " Quantidade: " . $qntd . "</p>";
+                                                echo "<p>Livro: ". $nome . " Quantidade: " . $quantia . "</p>";
                                             }
 
                                         }
