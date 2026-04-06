@@ -43,7 +43,7 @@
                                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     $tempC = $_POST["tempC"];
                                     $convert = ($tempC*1.8)+32;
-                                    echo "<p>Temperatura em Fahrenheit: $convert °<p>";
+                                    echo "<p>Temperatura em Fahrenheit: $convert °</p>";
                                 }
                             ?>
                         </div>
