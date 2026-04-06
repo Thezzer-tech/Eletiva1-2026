@@ -52,7 +52,7 @@
                                         $notas2 = $_POST["nota2"];
                                         $notas3 = $_POST["nota3"];
                                         
-                                        $media_notas = array();
+                                        $mapa_medias = array();
                                         
                                         for($i = 0; $i < 5; $i++){
                                             $nome_atual = $lista_nome[$i];
