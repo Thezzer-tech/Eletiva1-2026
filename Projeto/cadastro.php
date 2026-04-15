@@ -12,24 +12,48 @@
   <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
     <h3 class="text-center mb-4">Cadastro</h3>
 
-    <form>
+    <form method="post">
       <div class="mb-3">
         <label class="form-label">Nome</label>
-        <input type="text" class="form-control" placeholder="Digite seu nome" required>
+        <input type="text" class="form-control" name="nome" placeholder="Digite seu nome" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="email" class="form-control" placeholder="Digite seu email" required>
+        <input type="email" class="form-control" name="email" placeholder="Digite seu email" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Senha</label>
-        <input type="password" class="form-control" placeholder="Digite sua senha" required>
+        <input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required>
       </div>
 
       <button type="submit" class="btn btn-success w-100">Cadastrar</button>
     </form>
+
+    <?php
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        require_once('conexao.php');
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+        try{
+          $stmt = $pdo->prepare('INSERT INTO usuario (nome, email, senha)
+                                VALUES(?, ?, ?);');
+          if($stmt->execute([$nome, $email, $senha])){
+            echo"<p>Cadastro realizado! Faça o login</p>";
+
+          } else {
+            echo"<p>Erro ao Cadastrar! Tente novamente</p>";
+          }
+        }
+        catch(Exception $e){
+          echo "Erro: ".$e->getMessage();
+
+        }
+      }
+
+    ?>
 
     <p class="text-center mt-3">
       Já tem conta? <a href="login.html">Faça login</a>

@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema ProjetoPHP
+-- Schema projetophp
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema ProjetoPHP
+-- Schema projetophp
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ProjetoPHP` DEFAULT CHARACTER SET utf8 ;
-USE `ProjetoPHP` ;
+CREATE SCHEMA IF NOT EXISTS `projetophp` DEFAULT CHARACTER SET utf8 ;
+USE `projetophp` ;
 
 -- -----------------------------------------------------
--- Table `ProjetoPHP`.`usuarios`
+-- Table `projetophp`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ProjetoPHP`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `projetophp`.`usuarios` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
@@ -27,9 +27,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ProjetoPHP`.`categorias`
+-- Table `projetophp`.`categorias`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ProjetoPHP`.`categorias` (
+CREATE TABLE IF NOT EXISTS `projetophp`.`categorias` (
   `idcate` INT NOT NULL AUTO_INCREMENT,
   `nome_cat` VARCHAR(255) NOT NULL,
   `categoriascol` VARCHAR(45) NULL,
@@ -38,9 +38,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ProjetoPHP`.`Produtos`
+-- Table `projetophp`.`Produtos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ProjetoPHP`.`Produtos` (
+CREATE TABLE IF NOT EXISTS `projetophp`.`Produtos` (
   `idProdutos` INT NOT NULL AUTO_INCREMENT,
   `nome_prod` VARCHAR(255) NOT NULL,
   `valor` DECIMAL(8,2) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `ProjetoPHP`.`Produtos` (
   INDEX `fk_Produtos_categorias_idx` (`categorias_idcate` ASC),
   CONSTRAINT `fk_Produtos_categorias`
     FOREIGN KEY (`categorias_idcate`)
-    REFERENCES `ProjetoPHP`.`categorias` (`idcate`)
+    REFERENCES `projetophp`.`categorias` (`idcate`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
