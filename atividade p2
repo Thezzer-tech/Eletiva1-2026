@@ -1,0 +1,6 @@
+21.	Sistema de Cadastro de Imóveis – MIGUEL ARCANJO CAVALLI MEDEIROS
+o	Escopo: Gerenciamento de imóveis para uma imobiliária.
+o	RF1: CRUD para cadastro de imóveis.
+o	RF2: CRUD para cadastro de proprietários.
+o	RF3: CRUD para cadastro de locatários.
+o	RF4: Registrar contratos de locação, relacionando imóveis, proprietários e locatários (registrar a data de início e data de fim da locação).
