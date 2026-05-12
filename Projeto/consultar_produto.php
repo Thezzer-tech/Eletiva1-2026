@@ -3,7 +3,7 @@
     require_once('conexao.php');
     try{
         $stmt = 
-            $pdo->prepare('SELECT * FROM produto WHERE id=?');
+            $pdo->prepare('SELECT p.*, c.nome FROM produto p INNER JOIN categoria c ON c.id = p.categoria WHERE p.id=?');
         $stmt->execute([$_GET['id']]);
         $resultado = $stmt->fetch();
     } catch(Exception $e){
@@ -16,7 +16,7 @@
         action="consultar_produto.php?id=<?= $resultado['id'] ?>">
         <div class="mb-3">
               <p><strong>Descrição:</strong> 
-                 <?= $resultado['nome'] ?> 
+                 <?= $resultado['descriacao'] ?> 
               </p>
         </div>
         <div class="mb-3">
@@ -26,7 +26,7 @@
         </div>
         <div class="mb-3">
               <p><strong>Categoria:</strong> 
-                 
+              <?= $resultado['nome'] ?> 
               </p>
         </div>
         <button type="submit" class="btn btn-danger">Excluir</button>
