@@ -37,6 +37,8 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!--navbar-nav = transforma lista em botões de menu clicaveis
             me-auto = ele empurra a lista de links para esquerda -->
 
+            
+
           <li class="nav-item"> <!--Trabalha o em conjunto com o nav-link, iten avisa que aquele espaço na lista li é um item do menu, e o nav-link tira o azul padão do link -->
             <a class="nav-link" aria-current="page" href="principal.php">Início</a> <!--arria-current="page" para acessibilidade pessoas usando leitor de tela -->
           </li>
@@ -53,6 +55,13 @@
               <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="contratos.php">Contratos de Locação</a></li> <!-- dropdown-divider com hr cria linha horizontal para separar dos casdastros. --> 
             </ul>
           </li>
+          </ul> <ul class="navbar-nav ms-auto">
+          <li class="nav-item"> 
+            <a class="nav-link text-danger fw-bold" href="logout.php"> <!--logout-->
+              Sair
+            </a>
+          </li>
+        </ul>
         </ul>
       </div>
     </div>
