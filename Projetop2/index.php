@@ -6,6 +6,7 @@
     <title>Index</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
         body{
@@ -17,6 +18,13 @@
 
         }
     </style>
+    <script>
+        function alternarSenha() {
+            let a = document.getElementById("senhaLogin"); //o document é uma função do navegador que contem todo arquivo html
+            a.type === "password" ? a.type = "text" : a.type = "password";
+            
+        }
+    </script>
 </head>
 <body class="bg-light"> 
 
@@ -24,10 +32,18 @@
         <?php
             if(isset($_GET['cadastro'])){
                 $cadastro = $_GET['cadastro'];
-                if ($cadastro){
-                    echo "<p class='text-success'>Cadastro realizado com sucesso!</p>";
-                }else{
-                    echo "<p class='text-danger'>Erro ao relizar o Cadastro!</p>";
+                if ($cadastro == 'true'){
+                    echo '
+                    <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+                        <strong>Sucesso!</strong> Cadastro realizado com sucesso.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                }else if($cadastro == 'false'){
+                    echo '
+                    <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                        <strong>Erro!</strong> Não foi possível realizar o cadastro.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
                 }
             }
             if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -80,7 +96,7 @@
                                 <div class="col-md-9">
                                     <div class="input-group">
                                         <input type="password" class="form-control" id="senhaLogin" name="senha" placeholder="Digite senha" required />
-                                        <button class="btn btn-outline-secondary" type="button" id="btnToggleSenha">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="alternarSenha()"> <!--Precisarei utilizar javascript -->
                                             <i class="bi bi-eye" id="iconeOlho"></i>
                                         </button>
                                     </div>
